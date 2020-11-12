@@ -204,17 +204,4 @@ EOF
 
 chmod a+x "${HEROKU_BUILD_DIR}/tor/bin/${TOR_COMMAND}"
 
-################################################################################
-# Activate Runner
-################################################################################
-
-echo_extra "Activating the auto-runner"
-
-if [ ! -d "${HEROKU_BUILD_DIR}/.profile.d/" ]; then
-    mkdir "${HEROKU_BUILD_DIR}/.profile.d/"
-fi
-
-cp "${HEROKU_PACK_DIR}/extra/${TOR_COMMAND}.sh" "${HEROKU_BUILD_DIR}/.profile.d/"
-chmod +x "${HEROKU_BUILD_DIR}/.profile.d/${TOR_COMMAND}.sh"
-
 echo_extra "SUCCESS at installing Tor Proxy"
